@@ -42,6 +42,7 @@ int main(){
         }else{
             i++;
         };
+        change = tempchange;
     }
     for(int i = 0; i < sizeof(money)/4;i++){
         printf("%d-->%d\n ", money_kinds[i],changeAry[i]);
