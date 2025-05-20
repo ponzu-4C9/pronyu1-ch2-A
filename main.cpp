@@ -32,17 +32,18 @@ int main(){
     int change = input_money-fees[destination-1];
     printf("おつり%d\n",change);
 
-    int changeAry[5];
+    int changeAry[5] = {0};
     int i = 0;
     while (i < 5)
     {
         int tempchange = change - money_kinds[i];
         if(tempchange>=0){
+            change = tempchange;
             changeAry[i]++;
         }else{
+            
             i++;
         };
-        change = tempchange;
     }
     for(int i = 0; i < sizeof(money)/4;i++){
         printf("%d-->%d\n ", money_kinds[i],changeAry[i]);
