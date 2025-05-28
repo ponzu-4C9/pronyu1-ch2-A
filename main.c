@@ -13,15 +13,24 @@ int main(int argc, char const *argv[])
         x--;
         printf("%d",item_price[x]);
 
-        for(int i = 0; i < x; i++){
+        for(int i = 0; i < 5; i++){
+            printf("input money\n");
             printf("%d-->",money_kind[i]);
             scanf("%d", &input_money[i]);
             if(input_money[i] < 0){
                 printf("無効な金額です。\n");
-                return 1; 
+                continue;
             }
         }
-
+        printf("change\n");
+        int total_input = 0;
+        for(int i = 0; i < 5; i++){
+            total_input += input_money[i] * money_kind[i];
+        }
+        
+        for(int i = 0; i < 5; i++){
+            printf("%d-->%d\n", money_kind[i], input_money[i]);
+        }
     }
     return 0;
 }
